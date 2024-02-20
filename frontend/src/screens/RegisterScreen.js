@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import {Link, redirect} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import { Form,Button,Row, Col } from 'react-bootstrap'
 
 import { useDispatch,useSelector } from 'react-redux'
@@ -38,7 +38,7 @@ function RegisterScreen() {
 
     const submitHandler = (e) =>{
         e.preventDefault()
-        if (password != confirmPassword){
+        if (password !== confirmPassword){
             setMessage('Password does not match')
         } else{
             dispatch(register(name, email,password))
