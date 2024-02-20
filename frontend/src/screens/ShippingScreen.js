@@ -20,8 +20,6 @@ function ShippingScreen() {
     const [country, setCountry] = useState(shippingAddress.country)
 
     const navigate = useNavigate()
-
-
     const submitHandler = (e) =>{
         e.preventDefault()
         dispatch(saveShippingAddress({address,city,postalCode,country}))
@@ -77,7 +75,7 @@ function ShippingScreen() {
                     </Form.Control>
                 </Form.Group>
 
-                <Button type='submit' variant='primary' style={{ margin:'0.5%', width: '99%', borderRadius: '0' }} >Continue</Button>
+                <Button type='submit' variant='dark' style={{ margin:'0.5%', width: '99%', borderRadius: '0' }} >Continue</Button>
 
             </Form>
         </FormContainer>
