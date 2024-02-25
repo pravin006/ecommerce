@@ -8,6 +8,8 @@ from base.serializers import OrderSerializer
 
 from rest_framework import status
 
+from django.utils import timezone
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def addOrderItems(request):
@@ -69,3 +71,13 @@ def getOrderById(request,pk):
             Response({'detail':'Not authorized to view this order'}, status=status.HTTP_400_BAD_REQUEST)
     except:
         return Response({'detail':'Order does not exist'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def updateOrderToPaid(request,pk):
+    order = Order.objects.get(_id=pk)
+    order.isPaid = True
+    order.paidAt = timezone.now()
+    order.save()
+    return Response('Order was paid')
