@@ -12,6 +12,7 @@ function SearchBox() {
         e.preventDefault()
         if (keyword) {
             navigate(`/?keyword=${keyword}&page=1`)
+            setKeyword('')
         } else {
             navigate(location.pathname)
         }
@@ -22,6 +23,7 @@ function SearchBox() {
             <Form.Control
                 type='text'
                 name='q'
+                value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
                 className='mr-sm-2'
             ></Form.Control>
