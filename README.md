@@ -35,14 +35,14 @@ Before you begin, ensure you have the following installed:
 8. **Set database password**  
 Create an .env file as:
     ```bash
-    DB_PASSWORD=<your password>
+    DB_PASSWORD={your password}
 
 Or set the password manually in the settings.py
     ```bash
     DATABASES = {
     'default': {
     ...
-        'PASSWORD': <your password>
+        'PASSWORD': {your password}
     ...
 
 9. **Run migrations**
