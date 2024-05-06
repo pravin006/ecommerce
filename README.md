@@ -33,7 +33,7 @@ Before you begin, ensure you have the following installed:
    \q
 
 8. **Set database password**  
-Create a .env file as:
+Create a .env file in the app folder as:
     ```bash
     DB_PASSWORD={your postgres password}
     ```
@@ -50,6 +50,7 @@ Create a .env file as:
    
 10. **Run migrations**
     ```bash
+    cd app
     python manage.py migrate
 
 11. **Create a superuser(optional)**
