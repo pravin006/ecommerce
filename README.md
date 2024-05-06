@@ -29,7 +29,7 @@ Before you begin, ensure you have the following installed:
 7. **Set up the database**
    ```bash
    psql -U postgres
-   CREATE DATABASE ecommerce
+   CREATE DATABASE e-commerce;
    \q
 
 8. **Set database password**  
