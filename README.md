@@ -33,23 +33,26 @@ Before you begin, ensure you have the following installed:
    \q
 
 8. **Set database password**  
-Create an .env file as:
+Create a .env file as:
     ```bash
-    DB_PASSWORD=<your password>
-
-Or set the password manually in the settings.py
-    ```bash
-    DATABASES = {
+    DB_PASSWORD={your postgres password}
+    ```
+    
+   Or set the password manually in settings.py:
+   ```
+   DATABASES = {
     'default': {
-    ...
-        'PASSWORD': <your password>
-    ...
-
-9. **Run migrations**
+        ...
+        'PASSWORD': {your postgres password},
+        ...
+   }}
+   ```
+   
+10. **Run migrations**
     ```bash
     python manage.py migrate
 
-10. **Create a superuser(optional)**
+11. **Create a superuser(optional)**
     ```bash
     python manage.py createsuperuser
 
