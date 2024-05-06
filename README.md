@@ -24,10 +24,11 @@ Before you begin, ensure you have the following installed:
     pip install -r requirements.txt
 
 4. **Set up the database**
-   ```bash
+   ```
    psql -U postgres
    CREATE DATABASE e-commerce;
    \q
+   ```
 
 5. **Set database password**  
 Create a .env file in the app folder as:
