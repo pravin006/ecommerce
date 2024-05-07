@@ -26,7 +26,7 @@ Before you begin, ensure you have the following installed:
 4. **Set up the database**
    ```
    psql -U postgres
-   CREATE DATABASE e-commerce;
+   CREATE DATABASE ecommerce;
    \q
    ```
 
