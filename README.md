@@ -12,28 +12,26 @@ Before you begin, ensure you have the following installed:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/pravin006/ecommerce.git
-
-2. Navigate to the folder
-   ```bash
    cd ecommerce
    
-5. **Create and Activate a Virtual Environment**
+2. **Create and Activate a Virtual Environment**
    ```bash
     python -m venv venv
     venv/Scripts/activate
    
-6. **Install Dependencies**
+3. **Install Dependencies**
    ```bash
     pip install -r requirements.txt
 
-7. **Set up the database**
-   ```bash
+4. **Set up the database**
+   ```
    psql -U postgres
-   CREATE DATABASE ecommerce
+   CREATE DATABASE ecommerce;
    \q
+   ```
 
-8. **Set database password**  
-Create a .env file as:
+5. **Set database password**  
+Create a .env file in the app folder as:
     ```bash
     DB_PASSWORD={your postgres password}
     ```
@@ -48,15 +46,16 @@ Create a .env file as:
    }}
    ```
    
-10. **Run migrations**
+6. **Run migrations**
     ```bash
+    cd app
     python manage.py migrate
 
-11. **Create a superuser(optional)**
+7. **Create a superuser(optional)**
     ```bash
     python manage.py createsuperuser
 
-7. **Start the Application**
+8. **Start the Application**
    ```bash
     python manage.py runserver
 
