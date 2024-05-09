@@ -46,6 +46,20 @@ h3{
 .carousel a {
   margin: 0 auto;
 }
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures footer is pushed to the bottom */
+  height: 100%; /* Makes sure all cards in a row are of equal height */
+}
+
+.card-title {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 @media (max-width: 900px) {
   .carousel-caption h2 {
     font-size: 2.5vw;
