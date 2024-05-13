@@ -1,6 +1,7 @@
 services:
   django:
     build: .
+    container_name: django_app
     ports:
       - "8000:8000"
     environment:
@@ -9,21 +10,19 @@ services:
       - DB_NAME=ecommerce
       - DB_USER=postgres
       - DB_PASSWORD=${DB_PASSWORD} #pull from the .env file
-      - DJANGO_SUPERUSER_USERNAME=admin
-      - DJANGO_SUPERUSER_EMAIL=admin@email.com
-      - DJANGO_SUPERUSER_PASSWORD=${DJANGO_SUPERUSER_PASSWORD}
+
     volumes:
       - .:/app
     command: >
-      sh -c "python manage.py migrate &&
-            python manage.py import_products &&
-            python manage.py createsuperuser --noinput &&
+      sh -c "while ! nc -z db 5432; do sleep 1; done;
+            python manage.py migrate &&
             python manage.py runserver 0.0.0.0:8000"
     depends_on:
       - db
 
   db:
     image: postgres:12.19-alpine3.19
+    container_name: db
     environment:
       - POSTGRES_DB=ecommerce
       - POSTGRES_USER=postgres
