@@ -1,14 +1,22 @@
 This is a Django, React application that uses Postgres as its database. Please follow the instructions below to set up and run the application on your local machine.
 
+#### Home Page
+![Home Page](/screenshots/home.png)
+#### Product Page
+![Product Page](/screenshots/product.png)
+#### Cart Page
+![Cart Page](/screenshots/cart.png)
+#### Order Page
+![Order Page](/screenshots/order.png)
+#### Admin
+![Admin](/screenshots/admin.png)
+
 ## Features
 Top reviewed products carousel
 Product pagination
 Product search feature
-
 Product reviews and ratings
-
 Admin Product, User, Order management
-
 Shopping cart with checkout process
 PayPal / credit card integration
 
